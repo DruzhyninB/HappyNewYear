@@ -1,5 +1,12 @@
 ﻿function go() {
-
+    document.body.addEventListener('click', apearGift, true);
+    function apearGift(event) {
+            var newGift = document.createElement('div');
+        newGift.className = 'gift gBg' +Math.floor(Math.random()*(4-1)+1) ;
+        newGift.style.top = event.clientY - 25 + 'px';
+        newGift.style.left = event.clientX - 25 + 'px';
+        $('.gift_area').append(newGift);
+    }
 }
 
 $(window).ready(function () {
@@ -12,3 +19,4 @@ $(window).ready(function () {
         go();
     })
 })
+
